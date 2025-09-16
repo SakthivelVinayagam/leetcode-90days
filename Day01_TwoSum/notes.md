@@ -1,17 +1,33 @@
-# Day 1: Two Sum
+# Day 01: Two Sum
 
-**Problem:** [Two Sum](https://leetcode.com/problems/two-sum/)  
-**Category:** Array / Hashmap  
+**Problem**  
+Link: [Two Sum](https://leetcode.com/problems/two-sum/)  
+Category: Array, Hashmap  
 
-## 🧠 Approach
-- Use a hashmap to store values and their indices.  
-- For each number, check if `target - num` is already in the hashmap.  
-- Complexity: **O(n)** time, **O(n)** space.  
+---
 
-## 📝 Patterns
-- **Hashmap lookup** → efficient for complement pairs.  
-- Reappears in subarray sums, anagrams, frequency problems.  
+## Approach
+- Scan once and store previously seen numbers in a dictionary mapping `value -> index`.  
+- For each `num`, compute `complement = target - num`.  
+- If `complement` is already in the dictionary, return `[seen[complement], i]`.  
+- Else insert `seen[num] = i`.  
+- Check before insert to avoid pairing with itself when `target == 2 * num`.  
 
-## 🚩 Notes
-- Brute force = O(n²). Avoid.  
-- Handle duplicates carefully (store indices properly).  
+---
+
+## Complexity
+- **Time:** O(n)  
+- **Space:** O(n)  
+
+---
+
+## Patterns
+- Hashing / Complement lookup  
+- Similar problems: Two Sum II (sorted, two pointers), 3Sum, Subarray Sum Equals K (uses hashmap over prefix sums)  
+
+---
+
+## Notes
+- Be careful to return indices, not values.  
+- One valid answer exists; return immediately.  
+- Insert after checking complement.  
