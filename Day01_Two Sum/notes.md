@@ -23,7 +23,7 @@ Category: Array, Hashmap
 
 ## Patterns
 - Hashing / Complement lookup  
-- Similar problems: Two Sum II (sorted, two pointers), 3Sum, Subarray Sum Equals K (uses hashmap over prefix sums)  
+- Similar problems: Two Sum II (sorted, two pointers), 3Sum, Subarray Sum Equals K (uses hashmap over prefix sums)   
 
 ---
 
