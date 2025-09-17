@@ -6,7 +6,7 @@ Category: Hashmap / String
 
 ---
 
-## Approach
+## Approach 
 - First check: if lengths differ → immediately return False.  
 - Use a frequency counter (hashmap) to count characters in both strings.  
 - Compare the two counters: if equal → return True, else False.  
