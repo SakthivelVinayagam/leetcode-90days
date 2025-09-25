@@ -7,7 +7,7 @@ Category: Array / Dynamic Programming (Kadane), (Alt) Divide & Conquer
 ---
 
 ## Approach
-- **Kadane’s Algorithm (O(n))**:
+- **Kadane’s Algorithm (O(n))**: 
   - Maintain a running sum `curr_sum` and a global maximum `max_sum`.
   - For each element `x`, decide to extend the current subarray or start a new one:
     - `curr_sum = max(x, curr_sum + x)`
