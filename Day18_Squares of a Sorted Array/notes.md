@@ -6,30 +6,41 @@ Category: Array / Two Pointers
 
 ---
 
-## Approach
-- Squaring can change the order because negative numbers become positive.  
-- Largest square always comes from either leftmost (most negative) or rightmost (largest positive).  
-- Use **two pointers** (`left`, `right`):  
+## Approach 1: Square then Sort
+- Square each number, then sort the array.  
+- **Time:** O(n log n)  
+- **Space:** O(n)  
+- Simple to implement but not optimal.  
+
+---
+
+## Approach 2: Two Pointers (Optimized)
+- Array is sorted, but negatives can affect the order after squaring.  
+- The largest square always comes from either the leftmost (large negative) or rightmost (large positive).  
+- Use two pointers (`left`, `right`):  
   - Compare `abs(nums[left])` vs `abs(nums[right])`.  
-  - Place the larger square at the current end of the result array, then move that pointer inward.  
-- Continue until all positions are filled.
+  - Place the larger square at the end of the result array.  
+  - Move that pointer inward.  
+- Continue until all elements are placed.  
 
 ---
 
 ## Complexity
-- **Time:** O(n) (one pass through array)  
-- **Space:** O(n) (result array; could be optimized in-place but less clear)
+- **Time:** O(n)  
+- **Space:** O(n) (result array)  
 
 ---
 
 ## Patterns
 - Two Pointers (meet in middle).  
-- Similar to: Merge Sorted Array, Max Area Container, Sliding Window Maximum.
+- Similar to: Merge Sorted Array, Container With Most Water.  
 
 ---
 
 ## Notes
-- Squaring then sorting works but is O(n log n).  
-- Two-pointer approach achieves O(n).  
-- Handles both negative and positive ranges naturally.  
-- Edge cases: all negatives, all positives, single element.
+- Approach 1 (sort) is acceptable but slower.  
+- Approach 2 (two pointers) is interview-quality.  
+- Edge cases:  
+  - All negatives (e.g., [-5,-3,-1]) → result sorted after squaring.  
+  - All positives (already sorted).  
+  - Single element array.  
