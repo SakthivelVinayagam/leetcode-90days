@@ -1,0 +1,56 @@
+# Day 33: Kth Largest Element in an Array
+
+**Problem**  
+Link: https://leetcode.com/problems/kth-largest-element-in-an-array/  
+Category: Heap / Quickselect  
+Goal: Find the kth largest element without sorting the entire array.
+
+---
+
+## Approach
+### ✅ Method 1: Min-Heap (Efficient and Simple)
+1. Maintain a **min-heap** of size `k`.
+2. Iterate through all numbers:
+   - Push each number into the heap.
+   - If heap size exceeds `k`, remove the smallest element (`heappop`).
+3. At the end, the **root** of the heap (`min_heap[0]`) is the kth largest element.
+
+This works because we only keep the k largest elements, and the smallest among them is the kth largest overall.
+
+---
+
+## Example
+nums = [3, 2, 1, 5, 6, 4], k = 2  
+- Step 1: Push 3 → heap = [3]  
+- Step 2: Push 2 → heap = [2, 3]  
+- Step 3: Push 1 → remove smallest → heap = [2, 3]  
+- Step 4: Push 5 → remove smallest → heap = [3, 5]  
+- Step 5: Push 6 → remove smallest → heap = [5, 6]  
+- Step 6: Push 4 → remove smallest → heap = [5, 6]  
+→ Result = **5**
+
+---
+
+## Complexity
+- **Time:** O(n log k) — each push/pop on heap of size k.  
+- **Space:** O(k)
+
+---
+
+## Alternative Approach: Quickselect
+- Randomly partition array similar to QuickSort.
+- Recursively partition the side that contains the kth largest.
+- Average O(n), worst-case O(n²).
+
+---
+
+## Patterns
+- Top K / Heap Problems
+- Related: Kth Smallest, Top K Frequent Elements, Stream of K Largest.
+
+---
+
+## Notes
+- Python’s `heapq` is a **min-heap** by default.
+- If we wanted kth **smallest**, same logic applies directly.
+- For kth largest, we maintain heap size = k and discard smaller elements.
