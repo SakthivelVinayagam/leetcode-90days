@@ -1,4 +1,4 @@
--- Day 35: Consecutive Numbers
+-- Day 34: Consecutive Numbers
 -- Problem: https://leetcode.com/problems/consecutive-numbers/
 -- Category: SQL / Window / Self-Join
 
